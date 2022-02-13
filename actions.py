@@ -34,12 +34,14 @@ class ActionRephraseResponse(Action):
         self.entity_dicts = tracker.latest_message['entities']
 
         self.data = res_table[res_table['intent'] == self.intent]
-        self.intent_entities = set(data['entity name'].values)
+        self.intent_entities = set(self.data['entity name'].values)
         self.main_entity = 'NONE'
 
         for entity in self.entity_dicts:
             if entity['entity'] in self.intent_entities:
                 self.main_entity = entity['entity']
+
+        print(self.intent, '\t', self.main_entity)
 
         utter_row = self.data[self.data['entity name'] == self.main_entity]
 

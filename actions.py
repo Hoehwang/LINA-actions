@@ -16,7 +16,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-res_table = pd.read_csv("F:/_Daily/★_Chatbot_Renewal/LINA/★LINA-RASA/actions/RESPONSE_EXP_LINA.csv", encoding='utf-8')
+res_table = pd.read_csv("./actions/RESPONSE_EXP_LINA.csv", encoding='utf-8')
 
 entities_all = list(set(res_table['entity name'].to_list()))
 
